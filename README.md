@@ -29,7 +29,7 @@ x64
 ## Download labelled data
 ```
 cd ~/dddmr_yolo/src/yolov8_dataset/
-./download_dataset.bash
+git clone https://github.com/dddmobilerobot/airy_45deg_labelled_dataset.git
 ```
 
 ## Labeling
