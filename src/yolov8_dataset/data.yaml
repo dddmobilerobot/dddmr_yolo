@@ -1,0 +1,13 @@
+# Dataset root directory relative to the yolov5 directory
+path: .
+
+# Train/val/test sets: specify directories, *.txt files, or lists
+train: train/images
+val: val/images
+test: 
+
+
+names:
+    0: people
+    1: car
+

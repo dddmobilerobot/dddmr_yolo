@@ -1,0 +1,12 @@
+classes:
+- stair
+- person
+confidence_threshold: 0.45
+display_name: YOLO11n DDDMR
+input_height: 640
+input_width: 640
+model_path: best_opset12.onnx
+name: yolo11n-dddmr
+nms_threshold: 0.45
+score_threshold: 0.5
+type: yolov8

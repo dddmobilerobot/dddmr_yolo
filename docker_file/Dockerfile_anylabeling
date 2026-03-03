@@ -1,0 +1,29 @@
+FROM dddmr:cuda
+
+# Download the Miniconda installer
+#ARG MINICONDA_VERSION="latest"
+#RUN wget https://repo.anaconda.com/miniconda/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh -O /tmp/miniconda.sh
+
+# Install Miniconda silently into a specified directory
+#RUN bash /tmp/miniconda.sh -b -p /opt/conda
+
+# Add Miniconda to the PATH environment variable
+#ENV PATH="/opt/conda/bin:$PATH"
+
+# Clean up the installer
+#RUN rm /tmp/miniconda.sh
+#RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+#RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+
+#RUN /bin/bash -c "conda create --name anylabeling python=3.12"
+#RUN /bin/bash -c "conda init zsh && source ~/.zshrc && conda activate anylabeling && pip install anylabeling-gpu"
+#RUN echo "function start_anylabeling(){\nconda init zsh && source ~/.zshrc && conda activate anylabeling\n}" >> ~/.bashrc
+
+RUN /bin/bash -c "cd / && git clone https://github.com/vietanhdev/anylabeling.git && cd anylabeling && git checkout a21f0d6009859733abe06ccf2600b4271e844d75"
+COPY bash/app_info.py /anylabeling/anylabeling/app_info.py
+COPY bash/setup.py /anylabeling/setup.py
+RUN /bin/bash -c "cd /anylabeling && pip install -e ."
+COPY bash/label_widget.py /anylabeling/anylabeling/views/labeling/label_widget.py
+
+WORKDIR /root
+CMD ["bash"]

@@ -1,0 +1,9 @@
+FROM dddmr:l4t_r36
+
+RUN /bin/bash -c "cd / && git clone https://github.com/vietanhdev/anylabeling.git && cd anylabeling && git checkout a21f0d6009859733abe06ccf2600b4271e844d75"
+COPY bash/app_info_cpu.py /anylabeling/anylabeling/app_info.py
+COPY bash/setup.py /anylabeling/setup.py
+RUN /bin/bash -c "cd /anylabeling && pip install -e ."
+
+WORKDIR /root
+CMD ["bash"]
