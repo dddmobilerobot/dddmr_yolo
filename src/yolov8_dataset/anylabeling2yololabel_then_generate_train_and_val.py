@@ -41,18 +41,35 @@ for i in json_files:
         print("Processing file: %s" % i)
     
     json_name = i.split(".")
+    write_file = False
     with open(target_dir+"_yolo_label/"+json_name[0]+".txt", "w") as file:
         for index,i in enumerate(data['shapes']):
             #check label number
-            to_be_write = str(label_config_dict[i["label"]])
-            to_be_write += " "
-            shapes_dict = i
-            for a_pt in shapes_dict['points']:
-                x_nor = a_pt[0]/data['imageWidth']
-                y_nor = a_pt[1]/data['imageHeight']
-                to_be_write = to_be_write + " " + str(x_nor)
-                to_be_write = to_be_write + " " + str(y_nor)
-            file.write(to_be_write+"\n")
+            try:
+                to_be_write = str(label_config_dict[i["label"]])
+                to_be_write += " "
+                shapes_dict = i
+                for a_pt in shapes_dict['points']:
+                    x_nor = a_pt[0]/data['imageWidth']
+                    y_nor = a_pt[1]/data['imageHeight']
+                    to_be_write = to_be_write + " " + str(x_nor)
+                    to_be_write = to_be_write + " " + str(y_nor)
+                file.write(to_be_write+"\n")
+                write_file = True
+            except:
+                continue
+    
+    filename = target_dir+"_yolo_label/"+json_name[0]+".txt"
+    if (not write_file and os.path.exists(filename)):
+        try:
+            os.remove(filename)
+            print(f"File '{filename}' has been deleted successfully.")
+        except PermissionError:
+            print(f"Permission denied: unable to delete the file '{filename}'.")
+        except Exception as e:
+            print(f"Error occurred while deleting the file: {e}")
+    else:
+        print(f"File '{filename}' does not exist.")
 
 import random
 import shutil
