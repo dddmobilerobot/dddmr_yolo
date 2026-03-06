@@ -63,13 +63,11 @@ for i in json_files:
     if (not write_file and os.path.exists(filename)):
         try:
             os.remove(filename)
-            print(f"File '{filename}' has been deleted successfully.")
+            print(f"Empty file '{filename}' has been deleted successfully.")
         except PermissionError:
             print(f"Permission denied: unable to delete the file '{filename}'.")
         except Exception as e:
             print(f"Error occurred while deleting the file: {e}")
-    else:
-        print(f"File '{filename}' does not exist.")
 
 import random
 import shutil
