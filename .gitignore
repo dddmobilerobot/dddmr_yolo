@@ -41,12 +41,11 @@
 *.dwo
 *.trt
 *.pt
-src/yolov8_dataset/runs/
-src/yolov8_dataset/selected_rgb_from_anylabeling/
-src/yolov8_dataset/selected_rgb_yolo_label/
 *.cache
-src/yolov8_dataset/train
-src/yolov8_dataset/val
 *.txt
 *.zip
-src/yolov8_dataset/airy_45deg_labelled_dataset
+src/yolov11_training/airy_45deg_labelled_dataset/
+src/yolov11_training/depth_image_training/runs/
+src/yolov11_training/depth_image_training/selected_rgb_from_anylabeling/
+src/yolov11_training/depth_image_training/train/
+src/yolov11_training/depth_image_training/val/

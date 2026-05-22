@@ -15,11 +15,11 @@ def list_files_in_directory(path='.'):
 
 
 target_dir_list = [
-'airy_45deg_labelled_dataset/one_people_0',
-'airy_45deg_labelled_dataset/one_people_1',
-'airy_45deg_labelled_dataset/one_people_2',
-'airy_45deg_labelled_dataset/three_people_0',
-'airy_45deg_labelled_dataset/two_people_0']
+'../airy_45deg_labelled_dataset/one_people_0',
+'../airy_45deg_labelled_dataset/one_people_1',
+'../airy_45deg_labelled_dataset/one_people_2',
+'../airy_45deg_labelled_dataset/three_people_0',
+'../airy_45deg_labelled_dataset/two_people_0']
 
 for j in target_dir_list:
 

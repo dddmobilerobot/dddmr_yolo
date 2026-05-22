@@ -21,14 +21,19 @@ The docker file includes the docker image that can run anylabeling.
 > [!NOTE]
 > Anylabelling is not supported in l4t.
 
+First you will need dddmr:cuda docker image, please refer to:
+
+https://github.com/dfl-rlab/dddmr_navigation/tree/main/dddmr_docker
+
 ```
 cd ~/dddmr_yolo/docker_file/
 ./build.bash
-x64
+x64_cuda
 ```
+
 ## Download labelled data
 ```
-cd ~/dddmr_yolo/src/yolov8_dataset/
+cd ~/dddmr_yolo/src/yolov11_training/
 git clone https://github.com/dddmobilerobot/airy_45deg_labelled_dataset.git
 ```
 
@@ -46,7 +51,7 @@ anylabeling
 Include directories (labelled by anylabeling) you want to train.
 ```
 ./run_x64_yolo.bash
-cd dddmr_yolo/src/yolov8_dataset/
+cd dddmr_yolo/src/yolov11_training/depth_image_training
 nano pick_label_and_image.py
 ```
 Modify following line to include your own dataset or remove default dataset:
