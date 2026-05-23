@@ -45,7 +45,13 @@
 *.txt
 *.zip
 src/yolov11_training/airy_45deg_labelled_dataset/
+src/yolov11_training/depth_image_training/dddmr_airy_45deg_labeled_dataset/
 src/yolov11_training/depth_image_training/runs/
 src/yolov11_training/depth_image_training/selected_rgb_from_anylabeling/
 src/yolov11_training/depth_image_training/train/
 src/yolov11_training/depth_image_training/val/
+src/yolov11_training/apriltag_training/apriltag_record_dataset/
+src/yolov11_training/apriltag_training/runs/
+src/yolov11_training/apriltag_training/train/
+src/yolov11_training/apriltag_training/val/
+
