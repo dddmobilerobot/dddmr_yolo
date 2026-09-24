@@ -1,4 +1,4 @@
-FROM dddmr:cuda
+FROM dddmr:humble-cuda
 
 RUN pip3 install --no-dependencies ultralytics-thop==2.0.17
 RUN pip3 install --no-dependencies requests==2.32.5

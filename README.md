@@ -40,7 +40,6 @@ git clone https://github.com/dddmobilerobot/airy_45deg_labelled_dataset.git
 ## Labeling
 ```
 ./run_x64_anylabeling.bash
-start_anylabeling
 anylabeling
 ```
 <p align='center'>

@@ -1,4 +1,4 @@
-FROM dddmr:cuda
+FROM dddmr:humble-cuda
 
 # Download the Miniconda installer
 #ARG MINICONDA_VERSION="latest"

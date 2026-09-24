@@ -1,14 +1,10 @@
 #!/bin/bash
 
-function build_x64(){
-    docker build --network host -t dddmr:x64 -f Dockerfile_x64 .
-}
-
 #-----select image
-echo -n "Select image type (x64_cuda/l4t): "
+echo -n "Select image type (x64/l4t): "
 read image_type
 
-if [[ $image_type == "x64_cuda" ]]; then
+if [[ $image_type == "x64" ]]; then
  
     docker build --network host -t dddmr:yolo -f Dockerfile_yolo .
     docker build --network host -t dddmr:anylabeling -f Dockerfile_anylabeling .
